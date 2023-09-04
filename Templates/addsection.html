@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+      
+
+      <title>
+          Add Section
+      </title>
+      <style>
+        .navbar {
+            background-color: yellow;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            
+        }
+        .navbar a{
+            color: green;
+        }
+
+        body {
+            background-image: url('/static/BGimg1.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            }
+        .jumbotron{
+            background-color:rgb(255, 255, 100);
+            font-family:cursive;
+            
+            
+            
+
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            padding-top:100px;
+        }
+        .p a{
+            color:green;
+        }
+        
+        
+
+      </style>
+   </head>
+   <body>
+    <nav class="navbar navbar-expand-md ">
+      <a class="navbar-brand" href="{{url_for('home')}}"><img src="/static/pic.png" style="width: 50px;" ></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('inventory') }}">Inventory Management</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('removeproduct')}}">Inventory</a>
+            </li>
+        
+            
+        </ul>
+      </div>
+     
+    </nav>
+    
+      
+    
+    {% if message %}
+    <div class="alert alert-{{category}}   text-center" >
+      
+        <span aria-hidden="true"></span>
+      
+      {{message}}
+    </div>
+    
+    {% endif %}
+    
+      <body>
+        <div class="container">
+            <div class="jumbotron text-center  ">
+                <!-- <img src="/static/pic3.png"> -->
+                <h1>Add a Category</h1>
+                
+                <br>
+                <form action="/addsection" method="post" id="create">
+                    <div class="form-group">
+                      
+                      <input type="text"  name="section" class="form-control" placeholder="Category Name" required>
+                      
+                    </div>
+                    
+                    
+                    <button type="submit" class="btn btn-primary">ADD</button>
+                    
+                    
+                </div>
+                                
+        
+                  </form>
+                  
+                </div>
+        </div>
+           
+
+      </body>
+      
+
+
+
+
+    
+</body>
+</html>
