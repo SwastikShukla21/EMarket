@@ -130,7 +130,7 @@ def home():
         categories = showcategory()
 
         return render_template('home.html', products=products, categories=categories)
-    return render_template("welcome.html")
+    return render_template('welcome.html')
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -393,4 +393,4 @@ def search():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True, port=8080)
+    app.run(host="0.0.0.0", debug=True, port=8080,template_folder='Templates')
