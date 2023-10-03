@@ -130,7 +130,7 @@ def home():
         categories = showcategory()
 
         return render_template('home.html', products=products, categories=categories)
-    return render_template('/welcome.html')
+    return render_template('welcome.html')
 
 
 @app.route('/signup', methods=['GET', 'POST'])
